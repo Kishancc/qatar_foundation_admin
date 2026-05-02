@@ -2,7 +2,44 @@
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Backend Setup
+
+### Prerequisites
+- Python 3.8 or higher
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Neerajvs32/Test1.git
+   cd Test1
+   ```
+
+2. **Create virtual environment**
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activate virtual environment**
+   - Windows: `venv\Scripts\activate`
+   - Linux/Mac: `source venv/bin/activate`
+
+4. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Run the application**
+   ```bash
+   python app.py
+   ```
+
+The application will be available at `http://127.0.0.1:5000`
+
+---
+
+## 🏢 Project Overview
 
 1. **Clone the provided repository**
    ```bash
@@ -42,8 +79,56 @@ This project is part of the **CertifyMe Full Stack Intern Assessment**. The repo
 |---|---|
 | Backend | Python |
 | Framework | Flask |
-| Database | SQLite / MySQL / PostgreSQL |
+| Database | SQLite |
+| Authentication | Flask-Login |
+| ORM | SQLAlchemy |
 | Frontend | Pre-built Admin UI |
+
+---
+
+## 🔧 Backend Implementation
+
+### Database Models
+
+**Admin Model**
+- id (Primary Key)
+- full_name
+- email (Unique)
+- password_hash
+
+**Opportunity Model**
+- id (Primary Key)
+- name
+- duration
+- start_date
+- description
+- skills (Comma-separated string)
+- category
+- future_opportunities
+- max_applicants (Optional)
+- admin_id (Foreign Key to Admin)
+
+### API Endpoints
+
+#### Authentication
+- `POST /api/signup` - Create new admin account
+- `POST /api/login` - Admin login
+- `POST /api/logout` - Admin logout
+- `POST /api/forgot-password` - Password reset request
+
+#### Opportunities
+- `GET /api/opportunities` - Get all opportunities for logged-in admin
+- `POST /api/opportunities` - Create new opportunity
+- `GET /api/opportunities/<id>` - Get opportunity details
+- `PUT /api/opportunities/<id>` - Update opportunity
+- `DELETE /api/opportunities/<id>` - Delete opportunity
+
+### Security Features
+- Password hashing with Werkzeug
+- Session management with Flask-Login
+- Input validation and sanitization
+- SQL injection protection
+- Email enumeration prevention
 
 ---
 

@@ -14,6 +14,10 @@
     --qf-border: #c8ddd1;
     --qf-shadow: rgba(26, 92, 58, 0.1);
     --qf-shadow-strong: rgba(26, 92, 58, 0.18);
+    --qf-primary: #2d7a50;
+    --qf-primary-dark: #1a5c3a;
+    --qf-warning: #f39c12;
+    --qf-danger: #e74c3c;
     --bg-main: linear-gradient(145deg, #d6efe0 0%, #b3dcc4 30%, #9fcfb5 60%, #c5e8d5 100%);
     --bg-topbar: rgba(255,255,255,0.7);
     --radius: 16px;
@@ -1265,6 +1269,39 @@ body::after {
     align-items: center;
     padding-top: 16px;
     border-top: 1px solid var(--qf-border);
+}
+.opportunity-actions {
+    display: flex;
+    gap: 8px;
+}
+.opportunity-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.opportunity-actions .view-course-btn {
+    background: var(--qf-primary);
+    color: white;
+}
+.opportunity-actions .view-course-btn:hover {
+    background: var(--qf-primary-dark);
+}
+.opportunity-actions .edit-opportunity-btn {
+    background: var(--qf-warning);
+    color: white;
+}
+.opportunity-actions .edit-opportunity-btn:hover {
+    background: #d4a574;
+}
+.opportunity-actions .delete-opportunity-btn {
+    background: var(--qf-danger);
+    color: white;
+}
+.opportunity-actions .delete-opportunity-btn:hover {
+    background: #c0392b;
 }
 .applicants-count {
     font-size: 12px;
